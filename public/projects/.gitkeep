@@ -1,0 +1,15 @@
+# Placeholder images for your projects
+# Add your actual GIF demos and thumbnails here
+
+# Recommended structure:
+# /projects/
+#   - project-name-demo.gif
+#   - project-name-thumb.jpg
+#   - another-project-demo.gif
+#   - another-project-thumb.jpg
+
+# GIF Optimization Tips:
+# - Use tools like ezgif.com or gifsicle
+# - Target: 480-720p resolution, 10-15 fps
+# - Keep file size under 5MB
+# - Show 5-10 seconds of key gameplay
