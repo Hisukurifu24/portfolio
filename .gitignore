@@ -5,7 +5,7 @@ dist
 build
 
 # Dependencies
-package-lock.json
+# package-lock.json (uncommented for GitHub Actions)
 yarn.lock
 pnpm-lock.yaml
 
