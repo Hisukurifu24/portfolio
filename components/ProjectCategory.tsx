@@ -6,6 +6,7 @@ import { ProjectCategory as ProjectCategoryType } from '@/data/types'
 import { FaChevronDown } from 'react-icons/fa'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { SiItchdotio } from 'react-icons/si'
+import { withBasePath } from '@/utils/basePath'
 
 interface ProjectCategoryProps {
 	category: ProjectCategoryType
@@ -41,7 +42,7 @@ export default function ProjectCategory({
 					{category.previewImage && (
 						<div className="w-full md:w-48 h-48 md:h-32 rounded-xl overflow-hidden border border-gray-700 shrink-0 bg-dark-900/50 relative group-hover:border-opacity-50 transition-colors">
 							<img
-								src={category.previewImage}
+								src={withBasePath(category.previewImage)}
 								alt={`${category.title} preview`}
 								className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 							/>
@@ -128,7 +129,7 @@ export default function ProjectCategory({
 										>
 											{project.thumbnailUrl ? (
 												<img
-													src={project.thumbnailUrl}
+													src={withBasePath(project.thumbnailUrl)}
 													alt=""
 													className="w-12 h-12 rounded-lg object-cover shadow-sm border border-gray-800"
 												/>
