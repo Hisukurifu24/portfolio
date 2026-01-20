@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { FiGithub, FiExternalLink, FiPlay } from 'react-icons/fi'
 import { ProjectData } from '@/data/types'
+import { withBasePath } from '@/utils/basePath'
 
 interface ProjectCardProps {
 	project: ProjectData
@@ -31,7 +32,7 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 			>
 				{isHovered ? (
 					<video
-						src={project.videoUrl}
+						src={withBasePath(project.videoUrl)}
 						className="w-full h-full object-cover"
 						autoPlay
 						loop
@@ -40,7 +41,7 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 					/>
 				) : (
 					<img
-						src={project.thumbnailUrl || project.videoUrl}
+						src={withBasePath(project.thumbnailUrl || project.videoUrl)}
 						alt={`${project.title} thumbnail`}
 						className="w-full h-full object-cover"
 						loading="lazy"
