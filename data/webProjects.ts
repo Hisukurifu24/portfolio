@@ -57,8 +57,8 @@ export const webProjects: ProjectCategory[] = [
 				title: 'Backend System',
 				description: 'The core server-side application managing data, business logic, and API endpoints using Spring Boot.',
 				problem: 'Establishing a secure and scalable foundation for managing e-commerce data and API requests.',
-				videoUrl: '/projects/web/ecommerce/dashboard/demo.mp4',
-				thumbnailUrl: '/projects/web/ecommerce/dashboard/thumbnail.png',
+				videoUrl: '/projects/web/ecommerce/backend/backend.mp4',
+				thumbnailUrl: '/projects/web/ecommerce/backend/backend.png',
 				techStack: ['Spring Boot', 'Java', 'REST APIs', 'PostgreSQL'],
 				links: {
 					github: 'https://github.com/Hisukurifu24/prototype/tree/main/back-end-prototype',
@@ -86,9 +86,9 @@ export const webProjects: ProjectCategory[] = [
 				title: 'Web Dashboard',
 				description: 'A responsive administrative interface built with Angular for catalog and order management.',
 				problem: 'Providing an intuitive interface for administrators to manage the platform efficiently.',
-				videoUrl: '/projects/web/ecommerce/dashboard/demo.mp4',
-				thumbnailUrl: '/projects/web/ecommerce/dashboard/thumbnail.png',
-				techStack: ['Angular', 'TypeScript', 'RxJS', 'HTML/SCSS'],
+				videoUrl: '/projects/web/ecommerce/frontend/frontend.mp4',
+				thumbnailUrl: '/projects/web/ecommerce/frontend/frontend.png',
+				techStack: ['Angular', 'TypeScript', 'HTML/SCSS'],
 				links: {
 					github: 'https://github.com/Hisukurifu24/prototype/tree/main/front-end-prototype',
 				},
@@ -115,9 +115,9 @@ export const webProjects: ProjectCategory[] = [
 				title: 'Telegram Mini App Integration',
 				description: 'Advanced integration providing quick and intuitive access directly through the Telegram messaging app.',
 				problem: 'Delivering a seamless shopping experience within a chat interface.',
-				videoUrl: '/projects/web/ecommerce/telegram/demo.mp4',
-				thumbnailUrl: '/projects/web/ecommerce/telegram/thumbnail.png',
-				techStack: ['Telegram Web Apps API', 'Angular', 'TypeScript'],
+				videoUrl: '/projects/web/ecommerce/telegram/telegram.mp4',
+				thumbnailUrl: '/projects/web/ecommerce/telegram/telegram.png',
+				techStack: ['Telegram Mini Apps API', 'Angular', 'TypeScript'],
 				links: {},
 				caseStudy: {
 					goals: [
@@ -135,6 +135,165 @@ export const webProjects: ProjectCategory[] = [
 						'Designed a mobile-optimized interface with Angular',
 						'Implemented efficient API integration for the Mini App',
 					],
+				},
+			},
+		],
+	},
+	{
+		id: '2',
+		title: 'Public Lighting Optimization Web App',
+		description: 'A web app designed to monitor and optimize public lighting, managing energy consumption and detecting anomalies.',
+		previewImage: '/projects/web/public-lighting/preview.png',
+		tagline: 'Smart city solution for energy efficiency',
+		expandedDescription: 'During the "Software Engineering" course, I collaborated in a team of 6 people to develop a web app for a company. The app dynamically manages energy consumption, provides real-time monitoring, and detects anomalies. The project required the use of agile methodologies and advanced technologies.',
+		links: {
+			github: 'https://github.com/SWEllfish14/SWEllfish14',
+
+		},
+		projects: [
+			{
+				id: '1',
+				title: 'Frontend Dashboard',
+				description: 'Interactive interface for monitoring and controlling public lighting.',
+				problem: 'Providing a clear visualization of complex energy data and lighting status.',
+				videoUrl: '/projects/web/public-lighting/frontend/frontend.mp4',
+				thumbnailUrl: '/projects/web/public-lighting/frontend/frontend.png',
+				techStack: ['React', 'TypeScript', 'Material UI'],
+				links: {
+					github: 'https://github.com/SWEllfish14/SWEllfish14/tree/main/LumosMinima/client',
+				},
+				caseStudy: {
+					goals: [
+						'Visualize real-time monitoring data',
+						'Provide controls for lighting optimization',
+						'Ensure responsive user experience',
+					],
+					challenges: [
+						'Handling real-time state updates',
+						'Visualizing geospatial data',
+						'Integrating with backend APIs',
+					],
+					solutions: [
+						'Component-based architecture',
+						'Real-time data polling/sockets',
+						'Interactive data visualization charts',
+					],
+				},
+			},
+			{
+				id: '2',
+				title: 'Backend System',
+				description: 'Core logic for energy management, anomaly detection, and data processing.',
+				problem: 'Managing data flow and implementing optimization logic for energy consumption.',
+				videoUrl: '/projects/web/public-lighting/backend/backend.mp4',
+				thumbnailUrl: '/projects/web/public-lighting/backend/backend.png',
+				techStack: ['Node.js', 'Express', 'MariaDB'],
+				links: {
+					github: 'https://github.com/SWEllfish14/SWEllfish14/tree/main/LumosMinima/server',
+				},
+				caseStudy: {
+					goals: [
+						'Dynamically manage energy consumption',
+						'Detect anomalies in real-time',
+						'Serve data to frontend securely',
+					],
+					challenges: [
+						'Processing sensor data efficiently',
+						'Implementing optimization algorithms',
+						'Database schema design',
+					],
+					solutions: [
+						'RESTful API implementation',
+						'Automated detection services',
+						'Efficient data modeling',
+					],
+				},
+			},
+			{
+				id: '3',
+				title: 'Team Work & Methodology',
+				description: 'Collaboration in a team of 6 using Agile methodologies.',
+				problem: 'Coordinating development efforts across a medium-sized team.',
+				videoUrl: '/projects/web/public-lighting/team/team.mp4',
+				thumbnailUrl: '/projects/web/public-lighting/team/team.png',
+				techStack: ['Agile', 'Scrum', 'Git', 'Jira'],
+				links: {},
+				caseStudy: {
+					goals: [
+						'Efficient team collaboration',
+						'Iterative product development',
+						'Code quality maintenance',
+					],
+					challenges: [
+						'Task coordination among 6 members',
+						'Version control management',
+						'Meeting project deadlines',
+					],
+					solutions: [
+						'Regular sprint planning and standups',
+						'Branch-based development workflow',
+						'Collaborative code reviews',
+					],
+				},
+			},
+			{
+				id: '4',
+				title: 'Hardware Simulators',
+				description: 'Python-based simulators to mimic public lighting hardware and sensor data.',
+				problem: 'Testing the system without physical hardware access.',
+				videoUrl: '/projects/web/public-lighting/sim/sim.mp4',
+				thumbnailUrl: '/projects/web/public-lighting/sim/sim.png',
+				techStack: ['Python'],
+				links: {},
+				caseStudy: {
+					goals: [
+						'Simulate lamp behavior and energy consumption',
+						'Generate realistic sensor data for backend testing',
+						'Test anomaly detection algorithms',
+					],
+					challenges: [
+						'Accurately modeling hardware characteristics',
+						'Generating diverse data scenarios',
+						'Integrating with the backend API',
+					],
+					solutions: [
+						'Object-oriented simulation models',
+						'Configurable scenario generation',
+						'Automated data transmission scripts',
+					],
+				},
+			},
+		],
+	},
+	{
+		id: '3',
+		title: 'Wellness & Beauty Client Manager App',
+		description: 'Developed a mobile-style application designed for managing client records in a beauty treatment business.',
+		previewImage: '/projects/web/wellness/preview.png',
+		tagline: 'Manage client records in a beauty treatment business',
+		expandedDescription: 'It features client management, treatments management, promos management, track appointments, receive birthday reminders.',
+		links: {},
+		projects: [
+			{
+				id: '1',
+				title: 'Client Management',
+				description: 'Manage client records, track appointments, and receive birthday reminders.',
+				problem: 'Streamline client management processes for beauty treatment businesses.',
+				videoUrl: '/projects/web/wellness/client/client.mp4',
+				thumbnailUrl: '/projects/web/wellness/client/client.png',
+				techStack: ['React Native', 'Firebase'],
+				links: {},
+				caseStudy: {
+					goals: [
+						'Develop a mobile-style application for managing client records',
+						'Implement features for treatments and promos management',
+						'Enable appointment tracking and birthday reminders',
+					],
+					challenges: [
+						'Designing an intuitive interface for mobile devices',
+						'Integrating with backend services',
+					],
+					solutions: [],
 				},
 			},
 		],
