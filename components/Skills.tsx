@@ -59,8 +59,9 @@ export default function Skills({ section, accentColorHex }: SkillsProps) {
 						className="inline-flex items-center gap-2 text-lg font-medium hover:opacity-80 transition-opacity"
 						style={{ color: accentColorHex }}
 					>
+						<span>{section === 'game' ? '' : '<--'}</span>
 						Have a look at the {section === 'game' ? 'Web Dev' : 'Game Dev'} section
-						<span>→</span>
+						<span>{section === 'game' ? '-->' : ''}</span>
 					</button>
 				</div>
 			</div>
