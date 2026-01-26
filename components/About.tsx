@@ -1,5 +1,7 @@
 import { Section } from '@/data/types'
 import { aboutContent } from '@/data/sectionContent'
+import { withBasePath } from '@/utils/basePath'
+
 
 interface AboutProps {
 	section: Section
@@ -25,7 +27,7 @@ export default function About({ section, accentColorHex }: AboutProps) {
 								style={{ backgroundColor: accentColorHex }}
 							/>
 							<img
-								src="/me.png"
+								src={withBasePath("/me.png")}
 								alt="Profile"
 								className="relative w-full h-full object-cover rounded-2xl shadow-xl grayscale hover:grayscale-0 transition-all duration-500"
 							/>

@@ -59,7 +59,7 @@ export default function ProjectCategory({
 								{category.title}
 							</h3>
 							<span className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide border border-gray-700 bg-dark-900/50 text-gray-400">
-								{category.projects.length} {category.projects.length === 1 ? 'System' : 'Systems'}
+								{category.projects.length} {category.projects.length === 1 ? 'Feature' : 'Features'}
 							</span>
 						</div>
 
