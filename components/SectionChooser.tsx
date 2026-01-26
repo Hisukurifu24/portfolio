@@ -24,7 +24,7 @@ export default function SectionChooser({ onSelect }: SectionChooserProps) {
 			<div className="container mx-auto px-6 max-w-4xl">
 				<div className="text-center mb-8 md:mb-12 animate-fade-in">
 					<h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text text-transparent">
-						Welcome
+						Welcome to my Portfolio
 					</h1>
 					<p className="text-lg md:text-xl text-gray-400">
 						Which area are you interested in?

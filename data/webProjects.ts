@@ -270,30 +270,125 @@ export const webProjects: ProjectCategory[] = [
 		title: 'Wellness & Beauty Client Manager App',
 		description: 'Developed a mobile-style application designed for managing client records in a beauty treatment business.',
 		previewImage: '/projects/web/wellness/preview.png',
-		tagline: 'Manage client records in a beauty treatment business',
-		expandedDescription: 'It features client management, treatments management, promos management, track appointments, receive birthday reminders.',
-		links: {},
+		tagline: 'Comprehensive solution for beauty treatment businesses',
+		expandedDescription: 'A complete management system featuring client records, treatment tracking, promotional campaigns, appointment scheduling with calendar integration, birthday reminders, and streamlined app distribution through app stores.',
+		links: {
+			github: 'https://github.com/Hisukurifu24/app-centro-benessere-cristina',
+			live: 'https://apps.apple.com/it/app/centro-estetico-cristina/id6756626676'
+		},
 		projects: [
 			{
 				id: '1',
-				title: 'Client Management',
-				description: 'Manage client records, track appointments, and receive birthday reminders.',
-				problem: 'Streamline client management processes for beauty treatment businesses.',
+				title: 'Clients and Treatments Management',
+				description: 'Comprehensive system for managing client records, treatment history, and service details.',
+				problem: 'Efficiently manage client information and track treatment history for personalized service.',
 				videoUrl: '/projects/web/wellness/client/client.mp4',
 				thumbnailUrl: '/projects/web/wellness/client/client.png',
-				techStack: ['React Native', 'Firebase'],
+				techStack: ['React Native', 'TypeScript', 'SQLite'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/app-centro-benessere-cristina/blob/main/src/screens/ClientiScreen.tsx'
+				},
+				caseStudy: {
+					goals: [
+						'Create a centralized client database with treatment history',
+						'Enable quick access to client information during appointments',
+						'Track treatment outcomes and preferences',
+					],
+					challenges: [
+						'Designing an intuitive mobile interface for busy professionals',
+						'Managing complex relational data between clients and treatments',
+						'Ensuring data privacy and security',
+					],
+					solutions: [
+						'Implemented local SQLite database for offline access',
+						'Created reusable components for data entry and display',
+						'Built search and filter functionality for quick client lookup',
+					],
+				},
+			},
+			{
+				id: '2',
+				title: 'Promos Management',
+				description: 'System for creating, tracking, and managing promotional campaigns and special offers.',
+				problem: 'Need to attract new clients and retain existing ones through targeted promotional campaigns.',
+				videoUrl: '/projects/web/wellness/promos/promos.mp4',
+				thumbnailUrl: '/projects/web/wellness/promos/promos.png',
+				techStack: ['React Native', 'Push Notifications'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/app-centro-benessere-cristina/blob/main/src/screens/PromozioniScreen.tsx'
+				},
+				caseStudy: {
+					goals: [
+						'Create and manage promotional offers with validity periods',
+						'Track promotion usage and effectiveness',
+						'Notify clients about available promotions',
+					],
+					challenges: [
+						'Designing flexible promotion types (percentage, fixed amount, bundled services)',
+						'Preventing duplicate usage of one-time promotions',
+						'Scheduling automatic promotion activation and expiration',
+					],
+					solutions: [
+						'Built a promotion engine with customizable parameters',
+						'Implemented validation logic for promotion eligibility',
+						'Integrated push notifications for promotion alerts',
+					],
+				},
+			},
+			{
+				id: '3',
+				title: 'Calendar and Reminder Management',
+				description: 'Integrated calendar system for appointment scheduling with automated birthday and follow-up reminders.',
+				problem: 'Reduce no-shows and maintain client engagement through timely reminders and scheduling.',
+				videoUrl: '/projects/web/wellness/calendar/calendar.mp4',
+				thumbnailUrl: '/projects/web/wellness/calendar/calendar.png',
+				techStack: ['React Native', 'Calendar API', 'Local Notifications'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/app-centro-benessere-cristina/blob/main/src/screens/CalendarioScreen.tsx'
+				},
+				caseStudy: {
+					goals: [
+						'Provide visual calendar view for appointment management',
+						'Automate birthday reminders for personalized client outreach',
+						'Send appointment reminders to reduce no-shows',
+					],
+					challenges: [
+						'Synchronizing with device calendar while maintaining app-specific data',
+						'Managing multiple reminder types and schedules',
+						'Handling timezone considerations for reminders',
+					],
+					solutions: [
+						'Integrated native calendar APIs for seamless synchronization',
+						'Built notification scheduling system with customizable timing',
+						'Created dashboard for upcoming birthdays and appointments',
+					],
+				},
+			},
+			{
+				id: '4',
+				title: 'App Distribution (App Store)',
+				description: 'Managed the complete app deployment process including App Store submission and distribution.',
+				problem: 'Deliver the application to end users through official app stores with proper configuration.',
+				videoUrl: '/projects/web/wellness/distribution/distribution.mp4',
+				thumbnailUrl: '/projects/web/wellness/distribution/distribution.png',
+				techStack: ['React Native', 'Expo', 'App Store Connect', 'TestFlight'],
 				links: {},
 				caseStudy: {
 					goals: [
-						'Develop a mobile-style application for managing client records',
-						'Implement features for treatments and promos management',
-						'Enable appointment tracking and birthday reminders',
+						'Successfully publish app to Apple App Store',
+						'Configure app metadata, screenshots, and descriptions',
+						'Set up beta testing distribution channel',
 					],
 					challenges: [
-						'Designing an intuitive interface for mobile devices',
-						'Integrating with backend services',
+						'Meeting App Store review guidelines and requirements',
+						'Optimizing app bundle size and performance',
+						'Managing app signing and provisioning profiles',
 					],
-					solutions: [],
+					solutions: [
+						'Followed Apple Human Interface Guidelines for design',
+						'Used Expo build services for streamlined compilation',
+						'Set up TestFlight for beta testing before public release',
+					],
 				},
 			},
 		],
