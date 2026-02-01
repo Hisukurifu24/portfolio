@@ -1,12 +1,12 @@
-import ProjectCategory from './ProjectCategory'
-import { ProjectCategory as ProjectCategoryType } from '@/data/types'
+import Project from './Project'
+import { Project as ProjectType } from '@/data/types'
 
 interface ProjectsProps {
 	title: string
 	description: string
 	accentColor: string
 	accentColorHex: string
-	categories: ProjectCategoryType[]
+	projects: ProjectType[]
 }
 
 export default function Projects({
@@ -14,7 +14,7 @@ export default function Projects({
 	description,
 	accentColor,
 	accentColorHex,
-	categories,
+	projects,
 }: ProjectsProps) {
 	return (
 		<section id="projects" className="py-20 px-6 bg-black/20">
@@ -24,12 +24,12 @@ export default function Projects({
 					<p className="text-gray-400 text-lg">{description}</p>
 				</div>
 
-				{/* Render each category with its projects */}
+				{/* Render each project with its features */}
 				<div className="space-y-20">
-					{categories.map((category) => (
-						<ProjectCategory
-							key={category.id}
-							category={category}
+					{projects.map((project) => (
+						<Project
+							key={project.id}
+							project={project}
 							accentColor={accentColor}
 							accentColorHex={accentColorHex}
 						/>

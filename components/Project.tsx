@@ -1,24 +1,24 @@
 'use client'
 
 import { useState } from 'react'
-import ProjectCard from './ProjectCard'
-import { ProjectCategory as ProjectCategoryType } from '@/data/types'
+import FeatureCard from './FeatureCard'
+import { Project as ProjectType } from '@/data/types'
 import { FaChevronDown } from 'react-icons/fa'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { SiItchdotio } from 'react-icons/si'
 import { withBasePath } from '@/utils/basePath'
 
-interface ProjectCategoryProps {
-	category: ProjectCategoryType
+interface ProjectProps {
+	project: ProjectType
 	accentColor: string
 	accentColorHex: string
 }
 
-export default function ProjectCategory({
-	category,
+export default function Project({
+	project,
 	accentColor,
 	accentColorHex,
-}: ProjectCategoryProps) {
+}: ProjectProps) {
 	const [isExpanded, setIsExpanded] = useState(false)
 
 	return (
@@ -39,11 +39,11 @@ export default function ProjectCategory({
 
 				<div className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
 					{/* Preview Image */}
-					{category.previewImage && (
+					{project.previewImage && (
 						<div className="w-full md:w-48 h-48 md:h-32 rounded-xl overflow-hidden border border-gray-700 shrink-0 bg-dark-900/50 relative group-hover:border-opacity-50 transition-colors">
 							<img
-								src={withBasePath(category.previewImage)}
-								alt={`${category.title} preview`}
+								src={withBasePath(project.previewImage)}
+								alt={`${project.title} preview`}
 								className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 							/>
 						</div>
@@ -56,29 +56,29 @@ export default function ProjectCategory({
 								className="text-2xl md:text-3xl font-bold"
 								style={{ color: accentColorHex }}
 							>
-								{category.title}
+								{project.title}
 							</h3>
 							<span className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide border border-gray-700 bg-dark-900/50 text-gray-400">
-								{category.projects.length} {category.projects.length === 1 ? 'Feature' : 'Features'}
+								{project.features.length} {project.features.length === 1 ? 'Feature' : 'Features'}
 							</span>
 						</div>
 
-						{category.tagline && (
+						{project.tagline && (
 							<p className="text-gray-300 font-medium mb-2">
-								{category.tagline}
+								{project.tagline}
 							</p>
 						)}
 
 						<p className="text-gray-400 text-sm md:text-base leading-relaxed">
-							{category.description}
+							{project.description}
 						</p>
 
-						{/* Category Links */}
-						{category.links && (
+						{/* Project Links */}
+						{project.links && (
 							<div className="flex flex-wrap gap-4 mt-3" onClick={(e) => e.stopPropagation()}>
-								{category.links.github && (
+								{project.links.github && (
 									<a
-										href={category.links.github}
+										href={project.links.github}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
@@ -88,9 +88,9 @@ export default function ProjectCategory({
 										<span>Repository</span>
 									</a>
 								)}
-								{category.links.itchio && (
+								{project.links.itchio && (
 									<a
-										href={category.links.itchio}
+										href={project.links.itchio}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
@@ -100,9 +100,9 @@ export default function ProjectCategory({
 										<span>Itch.io</span>
 									</a>
 								)}
-								{category.links.live && (
+								{project.links.live && (
 									<a
-										href={category.links.live}
+										href={project.links.live}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
@@ -115,21 +115,21 @@ export default function ProjectCategory({
 							</div>
 						)}
 
-						{/* Mini Projects Preview */}
-						{!isExpanded && category.projects.length > 0 && (
+						{/* Mini Features Preview */}
+						{!isExpanded && project.features.length > 0 && (
 							<div className="mt-6 pt-4 border-t border-gray-700/50">
 								<p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
 									Contains:
 								</p>
 								<div className="flex flex-wrap gap-3">
-									{category.projects.map((project) => (
+									{project.features.map((feature) => (
 										<div
-											key={project.id}
+											key={feature.id}
 											className="flex items-center gap-4 px-5 py-3 rounded-xl bg-dark-900/50 border border-gray-700/50 text-base font-medium text-gray-200"
 										>
-											{project.thumbnailUrl ? (
+											{feature.thumbnailUrl ? (
 												<img
-													src={withBasePath(project.thumbnailUrl)}
+													src={withBasePath(feature.thumbnailUrl)}
 													alt=""
 													className="w-12 h-12 rounded-lg object-cover shadow-sm border border-gray-800"
 												/>
@@ -139,17 +139,17 @@ export default function ProjectCategory({
 													style={{ backgroundColor: accentColorHex }}
 												/>
 											)}
-											<span>{project.title}</span>
+											<span>{feature.title}</span>
 										</div>
 									))}
 								</div>
 							</div>
 						)}
 
-						{category.expandedDescription && isExpanded && (
+						{project.expandedDescription && isExpanded && (
 							<div className="mt-4 pt-4 border-t border-gray-700/50 animate-fade-in">
 								<p className="text-gray-400 text-sm leading-relaxed">
-									{category.expandedDescription}
+									{project.expandedDescription}
 								</p>
 							</div>
 						)}
@@ -172,13 +172,13 @@ export default function ProjectCategory({
 				</div>
 			</div>
 
-			{/* Projects Grid */}
+			{/* Features Grid */}
 			{isExpanded && (
 				<div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 animate-fade-in mt-8">
-					{category.projects.map((project) => (
-						<ProjectCard
-							key={project.id}
-							project={project}
+					{project.features.map((feature) => (
+						<FeatureCard
+							key={feature.id}
+							feature={feature}
 							accentColor={accentColor}
 							accentColorHex={accentColorHex}
 						/>

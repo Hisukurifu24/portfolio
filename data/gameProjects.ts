@@ -1,6 +1,6 @@
-import { ProjectCategory } from './types'
+import { Project } from './types'
 
-export const gameProjects: ProjectCategory[] = [
+export const gameProjects: Project[] = [
 	{
 		id: '1',
 		title: 'Godot RPG Framework',
@@ -11,7 +11,7 @@ export const gameProjects: ProjectCategory[] = [
 		previewImage: '/projects/games/godot-rpg/preview.png',
 		tagline: 'Building blocks for immersive RPG experiences',
 		expandedDescription: 'A production-ready suite of interconnected systems designed to accelerate RPG development. Each component is built with modularity and extensibility in mind, allowing developers to pick and choose features while maintaining seamless integration across the framework.',
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Dynamic Quest System',
@@ -141,7 +141,7 @@ export const gameProjects: ProjectCategory[] = [
 		},
 		tagline: 'Where classic gameplay meets modern sports simulation',
 		expandedDescription: 'A unique fusion of retro arcade mechanics with sophisticated tournament management. This project demonstrates how simple gameplay can be elevated through robust system design, creating an engaging competitive experience with real-world tournament structures.',
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Tournament System',
@@ -241,7 +241,7 @@ export const gameProjects: ProjectCategory[] = [
 		previewImage: '/projects/games/shadow-protocol/preview.png',
 		tagline: 'Survive the endless horde',
 		expandedDescription: 'An intense survival shooter featuring wave-based zombie combat. Players must manage their arsenal, survive increasingly difficult waves, and compete for the highest score in this test of endurance and precision.',
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Weapon System',
@@ -341,7 +341,7 @@ export const gameProjects: ProjectCategory[] = [
 		previewImage: '/projects/games/unity-arpg/preview.jpg',
 		tagline: 'Class-based combat and exploration',
 		expandedDescription: 'A feature-rich Action RPG built in Unity, showcasing a flexible ability system across multiple classes (Assassin, Fighter, Warrior, Mage, Monk), a robust inventory for item management, and an interactive dialogue system for storytelling.',
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Action Ability System',
@@ -442,7 +442,7 @@ export const gameProjects: ProjectCategory[] = [
 		previewImage: '/projects/games/school-fighters/preview.png',
 		tagline: 'Arcade-style 2D combat',
 		expandedDescription: 'A competitive 2D fighting game built in Unity, featuring a robust combat system with combos, a diverse roster of characters, and support for both local player-vs-player and player-vs-AI matches.',
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Combat System',

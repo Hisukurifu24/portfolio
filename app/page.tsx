@@ -34,7 +34,7 @@ export default function Home() {
 				description={config.description}
 				accentColor={config.accentColor}
 				accentColorHex={config.accentColorHex}
-				categories={projects}
+				projects={projects}
 			/>
 			<Skills section={selectedSection} accentColorHex={config.accentColorHex} />
 			<About section={selectedSection} accentColorHex={config.accentColorHex} />

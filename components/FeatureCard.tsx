@@ -2,16 +2,16 @@
 
 import { useState } from 'react'
 import { FiGithub, FiExternalLink, FiPlay } from 'react-icons/fi'
-import { ProjectData } from '@/data/types'
+import { FeatureData } from '@/data/types'
 import { withBasePath } from '@/utils/basePath'
 
-interface ProjectCardProps {
-	project: ProjectData
+interface FeatureCardProps {
+	feature: FeatureData
 	accentColor: string
 	accentColorHex: string
 }
 
-export default function ProjectCard({ project, accentColor, accentColorHex }: ProjectCardProps) {
+export default function FeatureCard({ feature, accentColor, accentColorHex }: FeatureCardProps) {
 	const [isHovered, setIsHovered] = useState(false)
 	const [showCaseStudy, setShowCaseStudy] = useState(false)
 
@@ -32,7 +32,7 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 			>
 				{isHovered ? (
 					<video
-						src={withBasePath(project.videoUrl)}
+						src={withBasePath(feature.videoUrl)}
 						className="w-full h-full object-cover"
 						autoPlay
 						loop
@@ -41,8 +41,8 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 					/>
 				) : (
 					<img
-						src={withBasePath(project.thumbnailUrl || project.videoUrl)}
-						alt={`${project.title} thumbnail`}
+						src={withBasePath(feature.thumbnailUrl || feature.videoUrl)}
+						alt={`${feature.title} thumbnail`}
 						className="w-full h-full object-cover"
 						loading="lazy"
 					/>
@@ -56,15 +56,15 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 
 			{/* Content */}
 			<div className="p-6">
-				<h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-				<p className="text-gray-400 mb-4">{project.description}</p>
+				<h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+				<p className="text-gray-400 mb-4">{feature.description}</p>
 				<p className="text-sm text-gray-500 mb-4">
-					<span className="font-semibold text-gray-400">Problem:</span> {project.problem}
+					<span className="font-semibold text-gray-400">Problem:</span> {feature.problem}
 				</p>
 
 				{/* Tech Stack */}
 				<div className="flex flex-wrap gap-2 mb-6">
-					{project.techStack.map((tech) => (
+					{feature.techStack.map((tech) => (
 						<span
 							key={tech}
 							className="px-3 py-1 bg-dark-700 text-sm rounded-full border border-gray-700"
@@ -77,9 +77,9 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 
 				{/* Links */}
 				<div className="flex flex-wrap gap-3 mb-4">
-					{project.links.github && (
+					{feature.links.github && (
 						<a
-							href={project.links.github}
+							href={feature.links.github}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="flex items-center gap-2 px-4 py-2 bg-dark-700 hover:bg-dark-600 text-white rounded-lg transition-colors text-sm font-medium"
@@ -91,7 +91,7 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 				</div>
 
 				{/* Case Study Toggle */}
-				{project.caseStudy && (
+				{feature.caseStudy && (
 					<button
 						onClick={() => setShowCaseStudy(!showCaseStudy)}
 						className="text-sm font-medium transition-all"
@@ -104,13 +104,13 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 				)}
 
 				{/* Case Study Expandable */}
-				{showCaseStudy && project.caseStudy && (
+				{showCaseStudy && feature.caseStudy && (
 					<div className="mt-4 pt-4 border-t border-gray-700 animate-fade-in">
 						<div className="space-y-4">
 							<div>
 								<h4 className="font-semibold text-gray-300 mb-2">Design Goals</h4>
 								<ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
-									{project.caseStudy.goals.map((goal, idx) => (
+									{feature.caseStudy.goals.map((goal, idx) => (
 										<li key={idx}>{goal}</li>
 									))}
 								</ul>
@@ -118,7 +118,7 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 							<div>
 								<h4 className="font-semibold text-gray-300 mb-2">Technical Challenges</h4>
 								<ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
-									{project.caseStudy.challenges.map((challenge, idx) => (
+									{feature.caseStudy.challenges.map((challenge, idx) => (
 										<li key={idx}>{challenge}</li>
 									))}
 								</ul>
@@ -126,7 +126,7 @@ export default function ProjectCard({ project, accentColor, accentColorHex }: Pr
 							<div>
 								<h4 className="font-semibold text-gray-300 mb-2">Solutions Implemented</h4>
 								<ul className="list-disc list-inside text-gray-400 text-sm space-y-1">
-									{project.caseStudy.solutions.map((solution, idx) => (
+									{feature.caseStudy.solutions.map((solution, idx) => (
 										<li key={idx}>{solution}</li>
 									))}
 								</ul>

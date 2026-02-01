@@ -1,6 +1,6 @@
 // Shared data types for both game and web development sections
 
-export interface ProjectData {
+export interface FeatureData {
 	id: string
 	title: string
 	description: string
@@ -18,7 +18,7 @@ export interface ProjectData {
 	}
 }
 
-export interface ProjectCategory {
+export interface Project {
 	id: string
 	title: string
 	description: string
@@ -31,7 +31,7 @@ export interface ProjectCategory {
 	}
 	tagline?: string // Short catchy phrase
 	expandedDescription?: string // Longer personality text
-	projects: ProjectData[]
+	features: FeatureData[]
 }
 
 export type Section = 'game' | 'web'

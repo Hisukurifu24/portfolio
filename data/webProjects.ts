@@ -1,7 +1,7 @@
-import { ProjectCategory } from './types'
+import { Project } from './types'
 
 // Empty structure for you to populate with your web development projects
-export const webProjects: ProjectCategory[] = [
+export const webProjects: Project[] = [
 	// Example structure - replace with your actual projects:
 	// {
 	// 	id: '1',
@@ -10,7 +10,7 @@ export const webProjects: ProjectCategory[] = [
 	// 	icon: '🌐',
 	// 	tagline: 'Building scalable solutions for the modern web',
 	// 	expandedDescription: 'A showcase of full-stack development expertise, featuring responsive user interfaces, RESTful APIs, and cloud-native architectures.',
-	// 	projects: [
+	// 	features: [
 	// 		{
 	// 			id: '1',
 	// 			title: 'Your Project Name',
@@ -51,7 +51,7 @@ export const webProjects: ProjectCategory[] = [
 			github: 'https://github.com/Hisukurifu24/prototype',
 			live: 'https://web.telegram.org/k/#@AmazingSynclabBot',
 		},
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Backend System',
@@ -150,7 +150,7 @@ export const webProjects: ProjectCategory[] = [
 			github: 'https://github.com/SWEllfish14/SWEllfish14',
 
 		},
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Frontend Dashboard',
@@ -276,7 +276,7 @@ export const webProjects: ProjectCategory[] = [
 			github: 'https://github.com/Hisukurifu24/app-centro-benessere-cristina',
 			live: 'https://apps.apple.com/it/app/centro-estetico-cristina/id6756626676'
 		},
-		projects: [
+		features: [
 			{
 				id: '1',
 				title: 'Clients and Treatments Management',
