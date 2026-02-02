@@ -393,4 +393,201 @@ export const webProjects: Project[] = [
 			},
 		],
 	},
+	{
+		id: '4',
+		title: 'Sushi Restaurant Website',
+		description: 'A modern, responsive website for an all-you-can-eat sushi restaurant featuring menu display, online reservations, order management, and a customer area.',
+		previewImage: '/projects/web/sushi/preview.png',
+		tagline: 'All-you-can-eat sushi web platform',
+		expandedDescription: 'As part of the "Web Technologies" course, I developed a website for an all-you-can-eat sushi restaurant, offering a user-friendly platform for managing information. The site includes features such as menu display, online reservations, order management, and a personalized customer area. It was designed with a modern, responsive interface to ensure optimal navigation on both mobile and desktop devices.',
+		links: {
+			github: 'https://github.com/AlessandroTigani/Progetto_TecWeb/tree/main',
+		},
+		features: [
+			{
+				id: '1',
+				title: 'Menu & Online Ordering',
+				description: 'Dynamic menu display with categories, item details, and an integrated online ordering flow for takeout and in-restaurant pickup.',
+				problem: 'Provide customers with an easy-to-browse menu and a fast ordering experience across devices.',
+				videoUrl: '/projects/web/sushi/menu/menu.mov',
+				thumbnailUrl: '/projects/web/sushi/menu/menu.png',
+				techStack: ['HTML', 'CSS', 'JavaScript'],
+				links: {
+					github: 'https://github.com/AlessandroTigani/Progetto_TecWeb/blob/main/website/menu.php',
+				},
+				caseStudy: {
+					goals: [
+						'Expose a clear and navigable menu',
+						'Enable fast, mobile-friendly ordering',
+					],
+					challenges: [
+						'Designing an intuitive UI for many menu items',
+						'Keeping the ordering flow snappy on low-bandwidth connections',
+					],
+					solutions: [
+						'Implemented progressive enhancement and client-side caching',
+						'Optimized assets and lazy-loaded menu categories',
+					],
+				},
+			},
+			{
+				id: '2',
+				title: 'Reservations System',
+				description: 'Online reservation scheduler with time-slot management, capacity handling, and admin controls.',
+				problem: 'Allow customers to book tables reliably while preventing overbooking and conflicts.',
+				videoUrl: '/projects/web/sushi/reservations/reservations.mov',
+				thumbnailUrl: '/projects/web/sushi/reservations/reservations.png',
+				techStack: ['JavaScript', 'PostgreSQL'],
+				links: {
+					github: 'https://github.com/AlessandroTigani/Progetto_TecWeb/blob/main/website/prenota.php',
+				},
+				caseStudy: {
+					goals: [
+						'Implement a robust reservation flow',
+						'Provide admin tools for managing bookings',
+					],
+					challenges: [
+						'Handling concurrent bookings and edge cases',
+						'Providing clear availability feedback to users',
+					],
+					solutions: [
+						'Designed transactional reservation logic in the database',
+						'Built an intuitive UI with live availability checks',
+					],
+				},
+			},
+			{
+				id: '3',
+				title: 'Customer Area & Order Management',
+				description: 'Personalized customer profiles, order history, and an order management interface for staff.',
+				problem: 'Allow customers to view past orders and let staff manage incoming orders seamlessly.',
+				videoUrl: '/projects/web/sushi/customer/customer.mov',
+				thumbnailUrl: '/projects/web/sushi/customer/customer.png',
+				techStack: ['JavaScript', 'PostgreSQL'],
+				links: {
+					github: 'https://github.com/AlessandroTigani/Progetto_TecWeb/blob/main/website/profilo_utente_prenotazioni.php',
+				},
+				caseStudy: {
+					goals: [
+						'Provide a personalized experience for returning customers',
+						'Simplify order processing for staff',
+					],
+					challenges: [
+						'Keeping customer data secure',
+						'Ensuring order state consistency between client and server',
+					],
+					solutions: [
+						'Implemented secure session handling and database access controls',
+						'Used transactional updates and optimistic UI patterns',
+					],
+				},
+			},
+			{
+				id: '4',
+				title: 'Responsive Design & Database Integration',
+				description: 'Mobile-first responsive layout and an advanced database layer for managing restaurant data and analytics.',
+				problem: 'Ensure consistent experience across devices while maintaining reliable data storage and reporting.',
+				videoUrl: '/projects/web/sushi/database/database.mov',
+				thumbnailUrl: '/projects/web/sushi/database/database.png',
+				techStack: ['PostgreSQL', 'SQL', 'HTML/CSS'],
+				links: {
+					github: 'https://github.com/AlessandroTigani/Progetto_TecWeb/blob/main/website/css/style.css',
+				},
+				caseStudy: {
+					goals: [
+						'Create a responsive UI for both mobile and desktop',
+						'Implement a scalable database for orders, reservations, and customers',
+					],
+					challenges: [
+						'Balancing performance and rich functionality',
+						'Designing an extensible schema for future features',
+					],
+					solutions: [
+						'Used mobile-first CSS and component reusability',
+						'Designed normalized schema with indexes and transaction support',
+					],
+				},
+			},
+		],
+	},
+	{
+		id: '5',
+		title: 'Database for Cultural Event Management',
+		description: 'A dedicated database system to manage conventions and cultural events—handling exhibitors, participants, sessions, tickets, and logistics while providing reporting and analysis tools.',
+		previewImage: '/projects/web/expo-database/preview.png',
+		tagline: 'Event organization backed by robust data modeling',
+		expandedDescription: 'As part of the "Database" course, I developed a database dedicated to managing cultural events such as anime, manga, video game, and film conventions. The system supports the registration and tracking of exhibitors, participants, scheduled events, ticket sales, and logistics, while providing tools for analysis and reporting. Designed to simplify organization and enhance efficiency in resource management.',
+		links: {
+			github: 'https://github.com/Hisukurifu24/ProgettoBasi',
+		},
+		features: [
+			{
+				id: '1',
+				title: 'Core Data Model & Schema',
+				description: 'Normalized relational schema capturing exhibitors, participants, events, tickets, venues, and logistics.',
+				problem: 'Provide a reliable foundation to model complex relationships and ensure data integrity across event operations.',
+				videoUrl: '/projects/web/expo-database/database/database.mov',
+				thumbnailUrl: '/projects/web/expo-database/database/database.png',
+				techStack: ['PostgreSQL', 'SQL', 'ER Modeling', 'Python'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/ProgettoBasi/blob/main/Codice%20SQL.sql',
+				},
+				caseStudy: {
+					goals: [
+						'Design a normalized schema covering exhibitors, sessions, tickets, and logistics',
+						'Support efficient queries for reporting and analysis',
+						'Ensure transactional integrity for ticket sales and registrations',
+					],
+					challenges: [
+						'Modeling many-to-many relationships (participants/events/exhibitors)',
+						'Handling concurrent ticket purchases and availability',
+						'Designing reporting queries that remain performant on large datasets',
+					],
+					solutions: [
+						'Normalized schema with junction tables and appropriate indexing',
+						'Implemented transaction-based ticket purchase flows and constraints',
+						'Created materialized views and optimized queries for frequent reports; used Python/Pandas for deeper analysis',
+					],
+				},
+			},
+		],
+	},
+	{
+		id: '6',
+		title: 'Graph Creation Software',
+		description: 'A desktop application for creating and editing graphs, built to demonstrate object-oriented design and principles.',
+		previewImage: '/projects/web/graph-creator/preview.svg',
+		tagline: 'Visual graph editor showcasing OOP design',
+		expandedDescription: 'Developed for the "Object-Oriented Programming" course, this software lets users create, modify, and persist graphs. Implemented in C++ using the Qt framework, it emphasizes SOLID principles and design patterns to separate model, view, and controller logic, enabling maintainability and extensibility.',
+		links: {},
+		features: [
+			{
+				id: '1',
+				title: 'Graph Editor & OOP Design',
+				description: 'Interactive editor for adding/removing nodes and edges, with support for labels, weights, and layout.',
+				problem: 'Provide an intuitive interface and a robust object-oriented model to represent graph structures and editing operations.',
+				videoUrl: '/projects/web/graph-creator/editor/editor.mov',
+				thumbnailUrl: '/projects/web/graph-creator/editor/editor.svg',
+				techStack: ['C++', 'Qt', 'OOP', 'Design Patterns'],
+				links: {},
+				caseStudy: {
+					goals: [
+						'Implement a modular object-oriented architecture for graph structures',
+						'Provide user-friendly editing tools for graph construction and modification',
+						'Enable save/load functionality and basic analysis features',
+					],
+					challenges: [
+						'Designing flexible data structures for various graph types',
+						'Keeping UI responsive during layout and edits',
+						'Ensuring easy extensibility for future algorithms and features',
+					],
+					solutions: [
+						'Applied design patterns (MVC, Observer, Factory) for clear separation of concerns',
+						'Used efficient data structures and incremental layout updates',
+						'Implemented serialization for persistence and unit tests for core components',
+					],
+				},
+			},
+		],
+	},
 ]
