@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	description: 'Game Programmer and Full-Stack Developer specializing in gameplay systems and modern web applications',
 	keywords: ['game developer', 'game programmer', 'full-stack developer', 'unity', 'godot', 'react', 'portfolio'],
 	icons: {
-		icon: '/favicon.ico',
+		icon: 'favicon.ico',
 	},
 }
 
