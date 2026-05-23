@@ -1,5 +1,17 @@
 import { Project } from './types'
 
+// Display order for the web section — rearrange these lines to reorder projects.
+// Match by project id (comment shows the title). Ids omitted here fall to the end.
+export const webProjectOrder: string[] = [
+	'7', // Council — D&D Session Planner
+	'3', // Wellness & Beauty Client Manager App
+	'1', // E-Commerce & Telegram Mini App
+	'2', // Public Lighting Optimization Web App
+	'4', // Sushi Restaurant Website
+	'5', // Database for Cultural Event Management
+	'6', // Graph Creation Software
+]
+
 // Empty structure for you to populate with your web development projects
 export const webProjects: Project[] = [
 	// Example structure - replace with your actual projects:
@@ -585,6 +597,136 @@ export const webProjects: Project[] = [
 						'Applied design patterns (MVC, Observer, Factory) for clear separation of concerns',
 						'Used efficient data structures and incremental layout updates',
 						'Implemented serialization for persistence and unit tests for core components',
+					],
+				},
+			},
+		],
+	},
+	{
+		id: '7',
+		title: 'Council — D&D Session Planner',
+		description: 'A mobile-first scheduling app that finds the night a whole tabletop party can actually play, blending When2Meet and Doodle with realtime sync.',
+		previewImage: '/projects/web/council/preview.png',
+		tagline: 'Find the night your whole party can play',
+		expandedDescription: 'Council is a free planner for tabletop groups. Everyone marks their availability across the next few weeks on a tap-and-drag grid, and a pure scoring function instantly surfaces the best and backup session times. Built as a single Next.js codebase with Supabase realtime sync, it works across devices and is ready to ship to iOS/Android via Capacitor.',
+		links: {
+			live: 'https://dnd-council.vercel.app/',
+			github: 'https://github.com/Hisukurifu24/council',
+		},
+		features: [
+			{
+				id: '1',
+				title: 'Availability Planner',
+				description: 'The core loop: a date × time-slot grid where players tap to cycle status or hold-and-drag to paint availability across many slots at once.',
+				problem: 'Coordinating a recurring game night across several people with conflicting schedules is tedious and error-prone.',
+				videoUrl: '/projects/web/council/planner/planner.mp4',
+				thumbnailUrl: '/projects/web/council/planner/planner.png',
+				techStack: ['React', 'TypeScript', 'Framer Motion', 'Tailwind CSS'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/council/blob/main/src/components/availability/availability-grid.tsx',
+				},
+				caseStudy: {
+					goals: [
+						'Make marking availability fast on mobile (tap-cycle and drag-paint)',
+						'Keep the grid accessible (status shown by icon + label, not color alone)',
+						'Update the recommendation live as people respond',
+					],
+					challenges: [
+						'Implementing smooth hold-and-drag painting across a touch grid',
+						'Handling bulk and voice-driven marking without confusing state',
+						'Reflecting concurrent edits from multiple devices instantly',
+					],
+					solutions: [
+						'Built a custom drag-to-paint interaction with pointer events',
+						'Added bulk-mark and voice-mark helpers for faster entry',
+						'Drove the UI from a single optimistic store synced over realtime',
+					],
+				},
+			},
+			{
+				id: '2',
+				title: 'Scoring & Recommendations',
+				description: 'A pure, unit-tested function that scores every date and slot, then surfaces the Best time, a Good backup on a different date, and slots to Avoid.',
+				problem: 'Raw availability data is hard to read — the group needs a clear, trustworthy answer for when to meet.',
+				videoUrl: '/projects/web/council/scoring/scoring.mp4',
+				thumbnailUrl: '/projects/web/council/scoring/scoring.png',
+				techStack: ['TypeScript', 'Zod', 'Vitest'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/council/blob/main/src/lib/core/scoring.ts',
+				},
+				caseStudy: {
+					goals: [
+						'Turn availability into a single, explainable recommendation',
+						'Weight confirmed availability over maybes and penalize conflicts',
+						'Keep the logic framework-agnostic and fully testable',
+					],
+					challenges: [
+						'Designing a scoring formula that feels intuitive to users',
+						'Producing distinct Best and backup options on different dates',
+						'Guaranteeing correctness as availability changes',
+					],
+					solutions: [
+						'Wrote scoring as a pure function decoupled from React',
+						'Computed a per-slot heat value for an at-a-glance heatmap',
+						'Covered the formula with focused Vitest unit tests',
+					],
+				},
+			},
+			{
+				id: '3',
+				title: 'Realtime Sync & Backend',
+				description: 'A single storage interface backed by Supabase (Postgres + Realtime), so every party member sees availability and recommendations update live on their own phone.',
+				problem: 'Each player marks availability on a different device, and everyone needs a consistent, up-to-the-second view.',
+				videoUrl: '/projects/web/council/realtime/realtime.mp4',
+				thumbnailUrl: '/projects/web/council/realtime/realtime.png',
+				techStack: ['Supabase', 'PostgreSQL', 'Realtime', 'Next.js'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/council/blob/main/src/lib/backends/supabase-backend.ts',
+				},
+				caseStudy: {
+					goals: [
+						'Sync availability across devices in realtime',
+						'Hide storage behind one swappable backend interface',
+						'Keep setup free and simple for a small gaming group',
+					],
+					challenges: [
+						'Reconciling optimistic local updates with server state',
+						'Designing a schema and access model for a no-OAuth app',
+						'Keeping a clean static export that runs the same on web and native',
+					],
+					solutions: [
+						'Implemented an in-memory store with optimistic mutations over Supabase',
+						'Used a permissive RLS model gated by an unguessable invite code',
+						'Drove all runtime IDs through query params for static export',
+					],
+				},
+			},
+			{
+				id: '4',
+				title: 'Campaigns, Auth & Invites',
+				description: 'Lightweight email/password login ties players to their campaigns, with shareable invite links and QR codes to bring the whole party on board.',
+				problem: 'Groups need a frictionless way to join a shared campaign without a paywall, OAuth, or heavy onboarding.',
+				videoUrl: '/projects/web/council/invites/invites.mp4',
+				thumbnailUrl: '/projects/web/council/invites/invites.png',
+				techStack: ['Next.js', 'TypeScript', 'Supabase', 'qrcode'],
+				links: {
+					github: 'https://github.com/Hisukurifu24/council/blob/main/src/components/campaign/invite-sheet.tsx',
+				},
+				caseStudy: {
+					goals: [
+						'Let a DM create a campaign and invite the party in seconds',
+						'Keep login lightweight while still tying people to campaigns',
+						'Make joining work from any phone via link or QR',
+					],
+					challenges: [
+						'Balancing low-friction access with basic account security',
+						'Generating and sharing invites that work across devices',
+						'Managing campaign membership and the minimum-players rule',
+					],
+					solutions: [
+						'Built email/password auth with hashed passwords, gated by invite code',
+						'Generated shareable links and QR codes via the qrcode library',
+						'Modeled campaigns, members, and join flows behind the storage interface',
 					],
 				},
 			},

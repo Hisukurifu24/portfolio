@@ -7,8 +7,9 @@ import About from '@/components/About'
 import SectionChooser from '@/components/SectionChooser'
 import { useSection } from '@/contexts/SectionContext'
 import { sectionConfigs } from '@/data/sectionContent'
-import { gameProjects } from '@/data/gameProjects'
-import { webProjects } from '@/data/webProjects'
+import { gameProjects, gameProjectOrder } from '@/data/gameProjects'
+import { webProjects, webProjectOrder } from '@/data/webProjects'
+import { orderProjects } from '@/utils/orderProjects'
 
 export default function Home() {
 	const { selectedSection, setSelectedSection, isLoading } = useSection()
@@ -24,7 +25,10 @@ export default function Home() {
 
 	// Get current section configuration
 	const config = sectionConfigs[selectedSection]
-	const projects = selectedSection === 'game' ? gameProjects : webProjects
+	const projects =
+		selectedSection === 'game'
+			? orderProjects(gameProjects, gameProjectOrder)
+			: orderProjects(webProjects, webProjectOrder)
 
 	return (
 		<>

@@ -1,5 +1,15 @@
 import { Project } from './types'
 
+// Display order for the game section — rearrange these lines to reorder projects.
+// Match by project id (comment shows the title). Ids omitted here fall to the end.
+export const gameProjectOrder: string[] = [
+	'1', // Godot RPG Framework
+	'2', // Pong Soccer
+	'3', // Shadow Protocol
+	'4', // Unity Action RPG
+	'5', // School Fighters
+]
+
 export const gameProjects: Project[] = [
 	{
 		id: '1',
