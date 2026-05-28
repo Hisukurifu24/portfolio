@@ -247,6 +247,7 @@ export const gameProjects: Project[] = [
 		description: 'A zombie survival game where you must resist waves of undead as long as possible.',
 		links: {
 			github: 'https://github.com/Hisukurifu24/Shadow-Protocol',
+			itchio: 'https://hiisukurifu.itch.io/shadow-protocol',
 		},
 		previewImage: '/projects/games/shadow-protocol/preview.png',
 		tagline: 'Survive the endless horde',
