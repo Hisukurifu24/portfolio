@@ -34,6 +34,13 @@ export interface Project {
 	features: FeatureData[]
 }
 
+export interface Education {
+	degree: string
+	institution: string
+	period?: string // e.g. '2021 – 2024'
+	inProgress?: boolean
+}
+
 export type Section = 'game' | 'web'
 
 export interface SectionConfig {

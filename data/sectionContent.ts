@@ -1,4 +1,4 @@
-import { Section, SectionConfig } from './types'
+import { Education, Section, SectionConfig } from './types'
 
 // Section configurations with accent colors
 export const sectionConfigs: Record<Section, SectionConfig> = {
@@ -58,6 +58,19 @@ export const aboutContent: Record<Section, {
 		],
 	},
 }
+
+// Education (shared by both sections), most recent first
+export const educationContent: Education[] = [
+	{
+		degree: "Master's Degree in Computer Science",
+		institution: 'University of Padua',
+		inProgress: true,
+	},
+	{
+		degree: "Bachelor's Degree in Computer Science",
+		institution: 'University of Padua',
+	},
+]
 
 // Skills for each section
 export const skillsContent: Record<Section, Record<string, string[]>> = {

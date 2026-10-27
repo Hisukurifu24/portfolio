@@ -1,5 +1,5 @@
 import { Section } from '@/data/types'
-import { aboutContent } from '@/data/sectionContent'
+import { aboutContent, educationContent } from '@/data/sectionContent'
 import { withBasePath } from '@/utils/basePath'
 
 
@@ -60,6 +60,35 @@ export default function About({ section, accentColorHex }: AboutProps) {
 									<span style={{ color: accentColorHex }} className="mt-1">▹</span>
 									<span><strong className="text-white">Problem Solving:</strong> Break down complex challenges into actionable, testable solutions</span>
 								</li>
+							</ul>
+						</div>
+
+						<div className="pt-8">
+							<h3 className="text-2xl font-bold mb-4 text-white">Education</h3>
+							<ul className="space-y-4">
+								{educationContent.map((entry) => (
+									<li
+										key={entry.degree}
+										className="pl-4 border-l-2"
+										style={{ borderColor: accentColorHex }}
+									>
+										<div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+											<strong className="text-white">{entry.degree}</strong>
+											{entry.inProgress && (
+												<span
+													className="text-xs font-medium px-2 py-0.5 rounded-full"
+													style={{ color: accentColorHex, backgroundColor: `${accentColorHex}20` }}
+												>
+													In progress
+												</span>
+											)}
+										</div>
+										<p className="text-base">
+											{entry.institution}
+											{entry.period && <span className="text-gray-500"> · {entry.period}</span>}
+										</p>
+									</li>
+								))}
 							</ul>
 						</div>
 					</div>
